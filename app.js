@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-const PORT = config.get('port') || 4000;
+const PORT = process.env.PORT || 4000;
 const MONGO_URI = config.get('mongoUri');
 mongoose.set('strictQuery', true);
 app.use(express.json());
