@@ -7,20 +7,6 @@ const app = express();
 
 const MONGO_URI = process.env.MONGO_URI_LOCAL
 const PORT = process.env.PORT || 4000;
-const corsOpts = {
-    origin: '*',
-
-    methods: [
-        'GET',
-        'POST',
-    ],
-
-    allowedHeaders: [
-        'Content-Type',
-    ],
-};
-
-app.use(cors(corsOpts));
 
 app.use(cors());
 app.use(function(req, res, next) {
