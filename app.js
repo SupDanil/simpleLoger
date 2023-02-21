@@ -7,8 +7,20 @@ const app = express();
 
 const MONGO_URI = process.env.MONGO_URI_LOCAL
 const PORT = process.env.PORT || 4000;
+const corsOpts = {
+    origin: '*',
 
-app.use(cors());
+    methods: [
+        'GET',
+        'POST',
+    ],
+
+    allowedHeaders: [
+        'Content-Type',
+    ],
+};
+
+app.use(cors(corsOpts));
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
